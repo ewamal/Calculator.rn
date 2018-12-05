@@ -13,6 +13,12 @@ export default class App extends React.Component {
     this.setState({ text: text })
   }
 
+  onFocus() {
+    this.setState({
+      text: ''
+    })
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -21,6 +27,7 @@ export default class App extends React.Component {
         <TextInput
           onChangeText={this.handleChangeText}
           value={this.state.text}
+          onFocus={() => this.onFocus()}
         />
 
         <Picker
